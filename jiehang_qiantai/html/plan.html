@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>留学服务</title>
+		<link rel="icon" href="favicon.ico" />
+		<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js"></script>
+		<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/less" href="less/common.less" />
+		<link rel="stylesheet" type="text/less" href="less/case.less" />
+		<link rel="stylesheet" type="text/css" href="less/plan.css" />
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.0/css/swiper.min.css" rel="stylesheet">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.0/js/bootstrap.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/3.0.4/less.js"></script>
+		<script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+		<script src="https://cdn.bootcss.com/axios/0.16.2/axios.min.js"></script>
+<script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+<script>
+		var _hmt = _hmt || [];
+					(function() {
+					  var hm = document.createElement("script");
+					  hm.src = "https://hm.baidu.com/hm.js?1aabfacd8c0c0219e5294387055c0b2e";
+					  var s = document.getElementsByTagName("script")[0]; 
+					  s.parentNode.insertBefore(hm, s);
+					})();
+					</script>
+	</head>
+
+	<body>
+
+		<div class="box" id="app" v-cloak>
+			<div class="top">
+				<div class="w1200">
+					<a href="index.html" title="捷航教育科技有限公司" class="pull-left">
+						<div class="logo"><img src="img/logo.png"></div>
+					</a>
+					<ul class="navhead">
+						<li class="active">
+							<a href="index.html">首页</a>
+						</li>
+						<li v-for="item in list">
+							<span>{{item.typeid}}</span>
+							<ul>
+								<li v-for="sing in item.countrylist">
+									<a v-bind:href="'country.html?id='+sing.Id">{{sing.country}}</a>
+								</li>
+
+							</ul>
+						</li>
+						<li>
+							<a href="plan.html">留学服务</a>
+						</li>
+						<li>
+							<a href="questCenter.html">答疑中心</a>
+						</li>
+						<li>
+							<a href="about.html?id=1">公司简介</a>
+						</li>
+						<div class="clearfix"></div>
+					</ul>
+					<div class="phone pull-right">
+						<p>咨询热线:15301813081</p>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+			<!--头部导航-->
+			<!--<header>
+				<div class="w1200">
+
+					<dl class="tnRight">
+
+						
+						<div class="clearfix"></div>
+					</dl>
+
+				</div>
+			</header>-->
+			<div class="wrap">
+				<!--轮播图-->
+				<div class="swiper-container" style="width: 100%;min-width: 1200px;">
+					<div class="swiper-wrapper bannerImg">
+						<div class="swiper-slide" style="background: url(images/tp1.jpg) no-repeat center center;background-size: cover;height:600px;width:100%;min-width:1200px">
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+			<div id="pro">
+				<div class="div1">
+					<div class="topa">
+						<a v-bind:href="url">
+							<h4>出国留学为什么要选留学机构？</h4>
+						</a>
+						<div class="topb">
+							<ul>
+								<li>
+									<p class="a">
+										<a v-bind:href="url" style="color:#595feb">专业留学服务机构放心</a>
+									</p>
+									<p class="b">捷航教育经政府批准设立，为学生申请的学校都是正规并且受中国教育部承认的学历，是家长、学生出国留学的首选。</p>
+								</li>
+								<li>
+									<p class="a">
+										<a v-bind:href="url" style="color:#595feb">提高名校申请竞争力</a>
+									</p>
+									<p class="b">拥有多年数据积累，能够应用自身的案例优势，针对名校申请率做分析，能更准确的提高学生名校申请率。</p>
+								</li>
+								<li>
+									<p class="a">
+										<a v-bind:href="url" style="color:#595feb">量身定制留学方案</a>
+									</p>
+									<p class="b">经验丰富，同时能够根据学生性格特点、留学述求、学术背景、职业规划、家庭财力等综合多方面定制较优留学办理方案。</p>
+								</li>
+								<li style="margin-right:0px;">
+									<p class="a">
+										<a v-bind:href="url"  style="color:#595feb">合作院校资源丰富</a>
+									</p>
+									<p class="b">国外院校招生名额有限，满额为止，留学服务机构常年与国外学校有合作，能快速获得近期招生信息，为学生申请提供去留学申请与指导。</p>
+								</li>
+							</ul>
+						</div>
+						<div class="topc">
+							<a v-bind:href="url" class="btn3 commonfonta" target="_blank">选放心留学服务机构</a>
+							<a v-bind:href="url" class="btn4 commonfonta popbtn">预约获取留学方案</a>
+						</div>
+					</div>
+				</div>
+				<div class="div2">
+					<div class="heada">
+						<a v-bind:href="url">
+							<h4>评估是否需要留学机构服务</h4>
+						</a>
+						<div class="headb">
+							<ul>
+								<li>
+									<p>是否了解留学申请的每一个环节的要求及手续</p>
+								</li>
+								<li style="margin-right:0px;">
+									<p>是否具备留学办理经验，有效规避申请过程的风险因素</p>
+								</li>
+								<li>
+									<p>是否认为网络上留学信息冗杂，不能快速辨别真伪</p>
+								</li>
+								<li style="margin-right:0px;">
+									<p>是否能根据自身性格、爱好、职业做出留学规划</p>
+								</li>
+								<li>
+									<p>是否确定申请目标学校、专业近期录取率</p>
+								</li>
+								<li style="margin-right:0px;">
+									<p>是否能在院校面试过程中，快速获得招生官亲睐</p>
+								</li>
+								<li>
+									<p>是否能在第一时间掌握目标院校近期招生动态</p>
+								</li>
+								<li style="margin-right:0px;">
+									<p>是否能够合理规划背景能力，令自己顺利进入名校</p>
+								</li>
+								<li>
+									<p>是否了解学校录取规则，并采取有效措施较终获得offer</p>
+								</li>
+								<li style="margin-right:0px;">
+									<p>是否了解名校申请的激烈程度，如何拥有绝对优势</p>
+								</li>
+							</ul>
+						</div>
+						<div class="headc">
+							<a v-bind:href="url" class="btn5 commonfonta" target="_blank">如何有效规避留学风险</a>
+							<a v-bind:href="url" class="btn6 commonfonta popbtn">科学定制名校申请规划</a>
+						</div>
+					</div>
+				</div>
+				<div class="div3">
+					<div class="box">
+						<a v-bind:href="url">
+							<h4>捷航教育能为您提供哪些服务？</h4>
+						</a>
+						<div class="boxa">
+							<ul>
+								<li>
+									<p class="c">
+										<a v-bind:href="url"  style="color:#a1134f">留学申请评估与定制方案</a>
+									</p>
+									<p class="d" style="width:272px;">捷航教育会根据您的在校成绩、所读院校、社会实践、性格特点等综合因素进行留学初步评估，然后捷航教育将结合您的留学目标院校、理想专业、未来就业为您定制留学办理方案。
+										<a v-bind:href="url" style="color: red;"><strong>【点击免费评估】</strong></a>
+									</p>
+								</li>
+								<li>
+									<p class="c">
+										<a v-bind:href="url" style="color:#a1134f">学校、专业选择与职业规划</a>
+									</p>
+									<p class="d">学校与专业选择是留学环节中较重要的环节，通常留学中介机构会为您选择多所院校及专业，并根据专业特点与将来就业情况为您进行梯度申请初级目标、中级目标及冲刺，全方位保障您的留学申请结果。
+										<a v-bind:href="url" style="color: red;"><strong>【推荐院校专业】</strong></a>
+									</p>
+								</li>
+								<li style="margin-right:0px;">
+									<p class="c">
+										<a v-bind:href="url"  style="color:#a1134f">软硬背景能力提升指导</a>
+									</p>
+									<p class="d">捷航教育将为您推荐名企实习、公益活动、海外课堂等独特的背景提升项目，从多个视角全面提升您的综合背景实力。
+										<a v-bind:href="url" style="color: red;"><strong>【了解背景提升项目】</strong></a>
+									</p>
+								</li>
+								<li>
+									<p class="c">
+										<a v-bind:href="url" style="color:#a1134f">有效合理与海外院校保持沟通</a>
+									</p>
+									<p class="d">捷航教育与海外多所院校保持良好合作关系，能够快速获得近期招生动态与专业申请细则，避免因信息误差造成的申请失败，捷航教育能够帮您抓住申请时机，提高名校录取率。
+										<a v-bind:href="url"  style="color: red;"><strong>【如何提升录取率】</strong></a>
+									</p>
+								</li>
+								<li>
+									<p class="c">
+										<a v-bind:href="url" style="color:#a1134f">制定合理留学文书与写作指导</a>
+									</p>
+									<p class="d">文书是招生官来判断是否被录取的重要途径，捷航教育，可以深度挖掘学生的亮点，并能够根据申请学校、专业的不同对文书提供差异化创新建议，在语法、用词上给予专业指导。
+										<a v-bind:href="url"  style="color: red;"><strong>【专业文书定制】</strong></a>
+									</p>
+								</li>
+								<li style="margin-right:0px;">
+									<p class="c">
+										<a v-bind:href="url"  style="color:#a1134f">签证办理及海外后续服务</a>
+									</p>
+									<p class="d">捷航教育在成功帮助学生申请到国外的学校，拿到offer后，还可以需要协助学生办理留学签证，进行面签辅导，捷航教育在海外拥有众多合作伙伴，为学生提供全程指导。
+										<a v-bind:href="url"  style="color: red;"><strong>【留学签证咨询】</strong></a>
+									</p>
+								</li>
+							</ul>
+						</div>
+						<div class="boxb">
+							<a href="" class="btn7 commonfonta"  target="_blank">在线了解海外名校招生动态</a>
+							<a href="" class="btn8 commonfonta popbtn">免费预约定制专属留学方案</a>
+						</div>
+					</div>
+				</div>
+				
+				<div class="div7">
+					<div class="boxl">
+						<a v-bind:href="url">
+							<h4>捷航教育办理优势，院校录取率高</h4>
+						</a>
+						<div class="boxq">
+							<ul>
+								<li>
+									<img src="images/tp18.png" width="125" height="125">
+									<p class="j">量身制作高端文书</p>
+									<p class="k">专业定制出国留学申请方案</p>
+									<p class="k">
+										<a v-bind:href="url" style="color: red;"><strong>【文书定制】</strong></a>
+									</p>
+								</li>
+								<li>
+									<img src="images/tp19.png" width="125" height="125">
+									<p class="j">众多合作院校</p>
+									<p class="k">助您无忧出国留学</p>
+									<p class="k">
+										<a v-bind:href="url"  style="color: red;"><strong>【院校推荐】</strong></a>
+									</p>
+								</li>
+								<li>
+									<img src="images/tp20.png" width="125" height="125">
+									<p class="j">知名品牌专家实力雄厚</p>
+									<p class="k">院校录取率、签证通过率高</p>
+									<p class="k">
+										<a v-bind:href="url"  style="color: red;"><strong>【预约专家】</strong></a>
+									</p>
+								</li>
+								<li style="margin-right:0px;">
+									<img src="images/tp21.png" width="125" height="125">
+									<p class="j">境外服务团队</p>
+									<p class="k">为留学生活提供全程指导</p>
+									<p class="k">
+										<a v-bind:href="url"  style="color: red;"><strong>【申请咨询】</strong></a>
+									</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--弹框-->
+			<div id="news-main">
+				<div class="sucpop-common">
+					<table width="100%" height="100%" border="0" cellpadding="0">
+						<tr>
+							<td align="left" bgcolor="#db2c3f" style="color:#fff">温馨提示</td>
+						</tr>
+						<tr>
+							<td align="center">
+								<div class="boxDesc"></div>
+							</td>
+						</tr>
+						<tr>
+							<td align="center"><input type="button" value="确定" class="surebtn" /></td>
+						</tr>
+					</table>
+				</div>
+
+				<div class="applypopbox-common"></div>
+				<div class="applypop-common">
+					<div class="pop-title">
+						<span>出国留学疑问多？想读名校，不知如何准备？</span>
+						<div class="closebtn"><img src="images/close-icon.png" /></div>
+					</div>
+					<div class="clear"></div>
+					<form action="#" name="onlineForm1" method="post" style="margin:0px;padding:0px;">
+						<input type="hidden" name="partId-common" id="partId-common" value="web-yuyue-common" />
+						<input type="hidden" name="partName-common" id="partName-common" value="专题公用资源入口【集团】-弹框" />
+						<table class="formt" border="0" cellspacing="0" cellpadding="10">
+							<tr>
+								<td align="right" width="100">*姓名：</td>
+								<td><input type="text" value="" name="userName" id="userName-common" /></td>
+							</tr>
+							<tr>
+								<td align="right">意向国家：</td>
+								<td>
+									<select name="toPlace" id="toPlace-common">
+										<option value="">请选择</option>
+										<option value="捷克">捷克</option>
+										<option value="法国">法国</option>
+										<option value="加拿大">加拿大</option>
+										<option value="澳大利亚">澳大利亚</option>
+										<option value="新西兰">新西兰</option>
+										<option value="新加坡">新加坡</option>
+										<option value="中国香港">中国香港</option>
+										<option value="日本">日本</option>
+										<option value="韩国">韩国</option>
+										<option value="法国">法国</option>
+										<option value="德国">德国</option>
+										<option value="意大利">意大利</option>
+										<option value="荷兰">荷兰</option>
+										<option value="爱尔兰">爱尔兰</option>
+										<option value="其他">其他</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td align="right">*电话：</td>
+								<td><input type="text" value="" name="usertel" id="usertel-common" /></td>
+							</tr>
+							<tr>
+								<td align="right">所在城市：</td>
+								<td>
+									<select name="fromCity" id="fromCity-common">
+										<option value="">请选择</option>
+										<option value="北京">北京</option>
+										<option value="上海">上海</option>
+										<option value="杭州">杭州</option>
+										<option value="苏州">苏州</option>
+										<option value="长沙">长沙</option>
+										<option value="深圳">深圳</option>
+										<option value="郑州">郑州</option>
+										<option value="宁波">宁波</option>
+										<option value="西安">西安</option>
+										<option value="厦门">厦门</option>
+										<option value="济南">济南</option>
+										<option value="武汉">武汉</option>
+										<option value="福州">福州</option>
+										<option value="南昌">南昌</option>
+										<option value="太原">太原</option>
+										<option value="温州">温州</option>
+										<option value="舟山">舟山</option>
+										<option value="天津">天津</option>
+										<option value="南京">南京</option>
+										<option value="重庆">重庆</option>
+										<option value="合肥">合肥</option>
+										<option value="成都">成都</option>
+										<option value="广州">广州</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2" align="right">*是必填项</td>
+							</tr>
+							<tr>
+								<td align="center" colspan="2">
+									<input type="button" value="预约申请" id="subBtnCommon" name="Submit" />
+									<a class="olcall" target="_blank" href='http://p.qiao.baidu.com/cps/chatIndex?reqParam=%7B"from"%3A0%2C"sid"%3A"-100"%2C"tid"%3A"-1"%2C"ttype"%3A1%2C"siteId"%3A"12889406"%2C"userId"%3A"26907084"%2C"pageId"%3A0%7D'>在线咨询</a>
+									<div class="clear"></div>
+								</td>
+							</tr>
+						</table>
+
+					</form>
+				</div>
+			</div>
+			<!-----------表单---------->
+
+			<!--尾部-->
+			<iframe frameborder="0" scrolling="no" src="footer.html" height="516px" width="100%" style="min-width:1200px;"></iframe>
+		</div>
+		<!-- 预约弹出框 end-->
+		<script src="config.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			window.onload = function() {
+				var vm = new Vue({
+					el: '#app',
+					data: {
+						list: null,
+						jianjie: null,
+						type: 1,
+						title: "",
+						url:'http://p.qiao.baidu.com/cps/chatIndex?reqParam=%7B"from"%3A0%2C"sid"%3A"-100"%2C"tid"%3A"-1"%2C"ttype"%3A1%2C"siteId"%3A"12889406"%2C"userId"%3A"26907084"%2C"pageId"%3A0%7D',
+
+					},
+					methods: {
+						getData: function(url, params) {
+							axios({
+								method: 'get',
+								url: url,
+								data: params
+							}).then((res) => {
+								res.data.data.forEach(function(item, index) {
+									if(item.typeid == 'zo') {
+										item.typeid = "中欧"
+									} else if(item.typeid == 'do') {
+										item.typeid = "东欧"
+									} else if(item.typeid == 'xo') {
+										item.typeid = "西欧"
+									} else if(item.typeid == 'bo') {
+										item.typeid = "北欧"
+									} else if(item.typeid == 'no') {
+										item.typeid = "南欧"
+									} else if(item.typeid == 'dny') {
+										item.typeid = "东南亚"
+									}
+
+								})
+								this.list = res.data.data;
+							})
+						}
+					},
+					created() {
+
+						this.getData("/getcountry", {})
+					}
+				})
+
+			}
+		</script>
+<script src="js/scroll.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>
