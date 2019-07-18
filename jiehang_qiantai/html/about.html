@@ -28,18 +28,23 @@
 							<li class="active">
 								<a href="index.html">首页</a>
 							</li>
-							<li v-for="item in list">
+							<!--<li v-for="item in list">
 								<span>{{item.typeid}}</span>
 								<ul>
 									<li v-for="sing in item.countrylist"><a       v-bind:href="'country.html?id='+sing.Id">{{sing.country}}</a></li>
 									
 								</ul>
-							</li>							
+							</li>							-->
+							<li>
+							<a href="country.html?id=22">捷克留学</a>	</li>					
 							<li>
 								<a href="plan.html">留学服务</a>
 							</li>
 							<li>
 								<a href="questCenter.html">答疑中心</a>
+							</li>
+							<li>
+								<a href="goodsCase.html?id=22">新闻中心</a>
 							</li>
 							<li>
 								<a href="about.html?id=1">公司简介</a>
@@ -182,7 +187,7 @@
 						}
 						$(".about_com_list ul a").eq(this.type-1).siblings().removeClass("a_active");
 						$(".about_com_list ul a").eq(this.type-1).addClass("a_active");																		
-						this.getData("/getcountry", {})												
+//						this.getData("/getcountry", {})												
 						this.getjianjie("/companyprofile")
 					}
 				})

@@ -14,7 +14,10 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/3.0.4/less.js"></script>
 		<script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
 		<script src="https://cdn.bootcss.com/axios/0.16.2/axios.min.js"></script>
-<script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+        <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+         <link href="css/quill.core.css" rel="stylesheet">
+        <link href="css/quill.bubble.css" rel="stylesheet">
+        <link href="css/quill.snow.css" rel="stylesheet">
 <style>
 	.nextpage a{
 		color: #0e457e;
@@ -43,18 +46,24 @@
 							<li class="active">
 								<a href="index.html">首页</a>
 							</li>
-							<li v-for="item in list">
+							<!--<li v-for="item in list">
 								<span>{{item.typeid}}</span>
 								<ul>
 									<li v-for="sing in item.countrylist"><a       v-bind:href="'country.html?id='+sing.Id">{{sing.country}}</a></li>
 									
 								</ul>
-							</li>							
+							</li>							-->
+							<li>
+							<a href="country.html?id=22">捷克留学</a>	</li>		
+							</li>	
 							<li>
 								<a href="plan.html">留学服务</a>
 							</li>
 							<li>
 								<a href="questCenter.html">答疑中心</a>
+							</li>
+							<li>
+								<a href="goodsCase.html?id=22">新闻中心</a>
 							</li>
 							<li>
 								<a href="about.html?id=1">公司简介</a>
@@ -78,7 +87,7 @@
 			</div>
 			<div class="w_1200"  v-for="item in jianjie3">				
 				<p class="text-center" style="margin-top: 70px;margin-bottom: 50px;">{{item.schoolName}}简介</p>
-				<article style="padding-bottom: 100px;"  v-html="item.content"></article>
+				<article style="padding-bottom: 100px;"  class="ql-editor" v-html="item.content"></article>
 			</div>	
 			<div class="w_1200">
 			    <div class="nextpage">
@@ -155,7 +164,7 @@
 					},
 					created() {
 						this.type=this.getParamString("id");																						
-						this.getData("/getcountry", {})												
+//						this.getData("/getcountry", {})												
 						this.getschooldetail("/getschooldetail")
 						this.url = window.location.href;
 					}

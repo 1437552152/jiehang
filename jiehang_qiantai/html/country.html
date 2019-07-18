@@ -46,21 +46,24 @@
 					<li class="active">
 						<a href="index.html">首页</a>
 					</li>
-					<li v-for="item in list">
-						<span>{{item.typeid}}</span>
-						<ul>
-							<li v-for="sing in item.countrylist">
-								<a v-bind:href="'country.html?id='+sing.Id">{{sing.country}}</a>
-							</li>
-
-						</ul>
-					</li>
+					<!--<li v-for="item in list">
+								<span>{{item.typeid}}</span>
+								<ul>
+									<li v-for="sing in item.countrylist"><a       v-bind:href="'country.html?id='+sing.Id">{{sing.country}}</a></li>
+									
+								</ul>
+							</li>							-->
+							<li>
+							<a href="country.html?id=22">捷克留学</a></li>
 					<li>
 						<a href="plan.html">留学服务</a>
 					</li>
 					<li>
 						<a href="questCenter.html">答疑中心</a>
 					</li>
+					<li>
+								<a href="goodsCase.html?id=22">新闻中心</a>
+							</li>
 					<li>
 						<a href="about.html?id=1">公司简介</a>
 					</li>
@@ -76,9 +79,9 @@
 			<!--轮播图-->
 			<div class="swiper-container" style="width: 100%;min-width: 1200px;height:500px">
 				<div class="swiper-wrapper bannerImg">
-					<div class="swiper-slide banner" v-for="item in  datalist.countryBannerdata" :style="{'background-image':`url(${item.pic1})`}">
+					<div class="swiper-slide banner" style="background-image:url('http://47.107.180.202:8080/public/images/2018-12-13/c440db874318cd6d36dd738804c3de3.jpg')">
 					</div>
-					<div class="swiper-slide banner" v-for="item in  datalist.countryBannerdata" :style="{'background-image':`url(${item.pic2})`}">
+					<div class="swiper-slide banner" style="background-image:url('http://47.107.180.202:8080/public/images/2018-12-11/hei.png')">
 					</div>
 				</div>
 				<div class="swiper-pagination dotPos"></div>
@@ -467,7 +470,7 @@
 			this.getCountryInfoData("/countryInfo", {
 				id: this.type
 			});
-			this.getData("/getcountry", {});
+//			this.getData("/getcountry", {});
 		}
 	})
 </script>

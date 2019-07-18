@@ -17,6 +17,11 @@
 		<script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
 		<script src="https://cdn.bootcss.com/axios/0.16.2/axios.min.js"></script>
 <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+
+        <link href="css/quill.core.css" rel="stylesheet">
+        <link href="css/quill.bubble.css" rel="stylesheet">
+        <link href="css/quill.snow.css" rel="stylesheet">
+
 <style>
 	.nextpage a{
 		color: #0e457e;
@@ -47,18 +52,23 @@
 							<li class="active">
 								<a href="index.html">首页</a>
 							</li>
-							<li v-for="item in list">
+							<!--<li v-for="item in list">
 								<span>{{item.typeid}}</span>
 								<ul>
 									<li v-for="sing in item.countrylist"><a       v-bind:href="'country.html?id='+sing.Id">{{sing.country}}</a></li>
 									
 								</ul>
-							</li>							
+							</li>							-->
+							<li>
+							<a href="country.html?id=22">捷克留学</a>		</li>							
 							<li>
 								<a href="plan.html">留学服务</a>
 							</li>
 							<li>
 								<a href="questCenter.html">答疑中心</a>
+							</li>
+							<li>
+								<a href="goodsCase.html?id=22">新闻中心</a>
 							</li>
 							<li>
 								<a href="about.html?id=1">公司简介</a>
@@ -96,7 +106,7 @@
 					<div class="mark">
 						<span>发布日期：{{item.time}}</span><span>来源：{{item.author}}</span><span>浏览次数：{{item.view}}</span>
 					</div>
-					<div class="showContxt"   v-html="item.content"></div>
+					<div class="showContxt ql-editor"   v-html="item.content"></div>
 				</div>
 			<div class="w1200">			   
 		     	 <div class="link">当前网页链接：<a  v-bind:href="url">{{url}}</a></div>
@@ -175,7 +185,7 @@
 					},
 					created() {
 						this.type=this.getParamString("id");																						
-						this.getData("/getcountry", {})												
+//						this.getData("/getcountry", {})												
 						this.getnewsdetail("/news/detail");
 						this.url = window.location.href;
 					}
